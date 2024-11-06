@@ -18,11 +18,6 @@ resource "google_storage_bucket" "streaming_project_bucket" {
   location = var.region
 }
 
-resource "google_storage_bucket_object" "conversations_json" {
-  name   = "conversations.json"
-  bucket = google_storage_bucket.streaming_project_bucket.name
-}
-
 resource "google_pubsub_topic" "topic" {
   name = var.topic_name
 }
