@@ -78,7 +78,7 @@ with beam.Pipeline(options=options) as pipeline:
 
     #Write the conversations data to the 'conversations' table in BigQuery
     conversations_data | 'Write conversations to BigQuery' >> WriteToBigQuery(
-        table='valid-verbena-437709-h5:dataflow.customer-conversations',
+        table='valid-verbena-437709-h5:dataops.customer_conversations',
         schema=conversations_schema,
         create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
         write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND
@@ -86,7 +86,7 @@ with beam.Pipeline(options=options) as pipeline:
 
     #Write the orders data to the 'orders' table in BigQuery
     orders_data | 'Write orders to BigQuery' >> WriteToBigQuery(
-        table='valid-verbena-437709-h5:dataflow.customer-orders',
+        table='valid-verbena-437709-h5:dataflow.customer_orders',
         schema=orders_schema,
         create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
         write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND
