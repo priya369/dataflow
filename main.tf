@@ -7,6 +7,6 @@ module "dataflow" {
     topic_name = "dataops-dataflow-pub"
     subscription_name = "dataops-dataflow-sub"
     dataset_id = "dataflow"
-    table_conversations_name = "customer-conversations"
-    table_orders_name = "customer-orders"
+    table_conversations_name = "customer_conversations"
+    table_orders_name = "customer_orders"
 }

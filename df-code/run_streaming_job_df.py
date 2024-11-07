@@ -8,19 +8,19 @@ from apache_beam.options.pipeline_options import PipelineOptions
 
 #Define your Dataflow pipeline options
 options = PipelineOptions(
-    runner='DirectRunner',   #for Dataflow job change to runner='DataflowRunner'
+    runner='DataflowRunner',   #for Dataflow job change to runner='DataflowRunner'
     project='valid-verbena-437709-h5',
     region='us-central1',   #for Dataflow job change to 'us-west1'
     temp_location='gs://dataops-dataflow-2024/temp',
     staging_location='gs://dataops-dataflow-2024/staging',
     streaming=True,  #Enable streaming mode
     #Dataflow parameters that are optional
-    #job_name='streaming-conversations',  #Set the Dataflow job name here
-    #num_workers=3,  #Specify the number of workers
-    #max_num_workers=10,  #Specify the maximum number of workers
-    #disk_size_gb=100,  #Specify the disk size in GB per worker
-    #autoscaling_algorithm='THROUGHPUT_BASED',  #Specify the autoscaling algorithm
-    #machine_type='n1-standard-4',  #Specify the machine type for the workers
+    job_name='streaming-conversations',  #Set the Dataflow job name here
+    num_workers=3,  #Specify the number of workers
+    max_num_workers=10,  #Specify the maximum number of workers
+    disk_size_gb=100,  #Specify the disk size in GB per worker
+    autoscaling_algorithm='THROUGHPUT_BASED',  #Specify the autoscaling algorithm
+    machine_type='n1-standard-4',  #Specify the machine type for the workers
     service_account_email='dataops-guru-sa@valid-verbena-437709-h5.iam.gserviceaccount.com'  #Specify the service account email, add these roles: BigQuery Admin, Dataflow Worker, Pub/Sub Admin, Storage Object Viewer 
 )
 
