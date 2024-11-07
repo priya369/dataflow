@@ -34,7 +34,7 @@ resource "google_bigquery_dataset" "dataset" {
   default_table_expiration_ms = null
 }
 
-resource "google_bigquery_table" "conversations" {
+resource "google_bigquery_table" "customer_conversations" {
   dataset_id = google_bigquery_dataset.dataset.dataset_id
   table_id   = var.table_conversations_name
 
@@ -89,7 +89,7 @@ resource "google_bigquery_table" "conversations" {
 EOF
 }
 
-resource "google_bigquery_table" "orders" {
+resource "google_bigquery_table" "customer_orders" {
   dataset_id = google_bigquery_dataset.dataset.dataset_id
   table_id   = var.table_orders_name
 
